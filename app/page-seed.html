@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<h1>Loaded!</h1>
+		<div id="status"></div>
+		<script>
+			window.addEventListener('load', function onload() {
+
+				var status = document.getElementById('status')
+				function consoleLog(str) {
+					status.innerHTML += str.toString().replace(/\r?\n/g, '<br>') + '<br>'
+				}
+
+				try {
+					consoleLog('initiating seed')
+					require('./client-seed.js')(consoleLog)
+				} catch (e) {
+					consoleLog(String(e))
+				}
+
+			}, false)
+		</script>
+	</body>
+</html>

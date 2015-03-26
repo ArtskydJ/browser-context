@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p id="pid">wut</p>
+		<script>
+			setTimeout(function () {
+				var pid = document.getElementById('pid')
+				var wg = (typeof window.global !== 'undefined')
+
+				pid.innerHTML = 'window.global is ' + (wg ? 'not ' : '') + 'defined'
+
+				window.global[moduleName] = require(window.global.browserContextLoad)
+
+				pid.innerHTML = 'so um hi'
+				pid.innerHTML = [
+					'window.global.',
+					moduleName,
+					' = require(',
+					window.global.browserContextLoad,
+					')\n',
+					window.global[moduleName]
+				].join('')
+			}, 2000)
+		</script>
+	</body>
+</html>
