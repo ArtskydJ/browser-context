@@ -10,6 +10,7 @@
 				var status = document.getElementById('status')
 				function consoleLog(str) {
 					status.innerHTML += str.toString().replace(/\r?\n/g, '<br>') + '<br>'
+					console.log(str)
 				}
 
 				try {

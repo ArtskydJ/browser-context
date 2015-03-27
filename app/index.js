@@ -24,8 +24,8 @@ function createRenderer(page, opts) {
 }
 
 app.on('ready', function() {
-	createRenderer('page-seed.html', { show: true, x: 800 })
-	createRenderer('page-download.html', { show: true })
+	createRenderer('page-seed.html', { show: true })
+	//createRenderer('page-download.html', { show: true })
 })
 
 app.on('window-all-closed', function () {
